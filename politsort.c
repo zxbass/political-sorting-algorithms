@@ -81,9 +81,24 @@ void fasc_sort(int64_t *arr, int64_t *len)
     *len = (*len)/2;
 }
 
-void commie_sort(int64_t *arr, const int64_t len)
+void commie_sort(int64_t *arr, int64_t *len)
 {
-    for (size_t i = 0; i < len; ++i) {
+    int64_t swap;
+
+    for (size_t i = 0; i < (*len)-1; ++i) {
+        for (size_t j = i+1; j < (*len); ++j) {
+            if (arr[i] > arr[j]) {
+                swap = arr[i];
+                arr[i] = arr[j];
+                arr[j] = swap;
+            }
+        }
+    }
+    
+    // get rid of the rich
+    *len = (*len)/4;
+
+    for (size_t i = 0; i < *len; ++i) {
         // 42 is enough for everyone, according to our plan
         arr[i] = 42;
     }
