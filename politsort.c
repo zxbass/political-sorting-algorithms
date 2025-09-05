@@ -84,7 +84,7 @@ void fasc_sort(int64_t *arr, int64_t *len)
 void commie_sort(int64_t *arr, const int64_t len)
 {
     for (size_t i = 0; i < len; ++i) {
-        // 5 is enough for everyone, according to our plan
+        // 42 is enough for everyone, according to our plan
         arr[i] = 42;
     }
 }
